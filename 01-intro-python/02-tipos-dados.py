@@ -2,7 +2,7 @@
 # int, float, complex
 
 # int
-idade = 16
+idade = 17
 # float
 altura = 1.60 
 
