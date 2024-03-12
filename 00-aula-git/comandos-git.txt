@@ -8,4 +8,6 @@ git add <nome do arquivo> - adiciona um arquivo para o próximo commit
 
 git add . - adiciona todos os arquivos (untracked e modified) para o próximo commit
 
-git push --set-upstream origin main (para finalizar - em casa)
+git commit -m'comentário' - captura um instantâneo das mudanças preparadas do projeto no momento
+
+git push -  enviar os commits de sua branch e repositório Git local para o seu repositório remoto.
