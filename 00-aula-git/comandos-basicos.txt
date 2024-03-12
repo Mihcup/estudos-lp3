@@ -1,0 +1,38 @@
+1. Ao chegar no Laboratório
+
+1. Configurar o user e email do git local
+git config --global user.name "Seu Nome"
+git config --global user.email "seuemail@email.com"
+git config -l
+
+2. Apagar o diretório caso ele exista
+rm -rf estudos-lp3
+
+3. Clonar o seu repositorio
+git clone https://github.com/SEU-USUARIO/estudos-lp3.git
+
+4. Abrir no VSCode o diretório
+code estudos-lp3
+
+
+2. Durante a aula
+
+git add .
+git commit -m "mensagem do commit"
+
+Gerar o token no Github
+
+Settings -> Developer settings -> Personal access token -> Tokens (classic) -> Generate new Token (classic) -> selecionar o scope repo
+
+git push
+
+Cancelar a opção de integração do VSCode, colocar o seu usuário do github e em seguida o token gerado.
+
+
+3. Antes de sair do Lab
+
+- Apagar o token no GitHub
+- Deslogar do GitHub
+- Remover as configurações locais do git
+git config --global --unset user.name
+git config --global --unset user.email

@@ -75,7 +75,7 @@ somar(n2=10.0,n1=2.0)
 # 5. Tuple - "meio que lista de valores" que não pode ser alterada, ñ pode inserir, nem retirar 
 opcoes = ('sim','não','talvez')
 print(opcoes[0])
-#no muda durante a execução do cóigo 
+#não muda durante a execução do cóigo 
 for opcao in opcoes: 
     print(opcao)
 
@@ -85,7 +85,8 @@ habilidades = {'python','java','c','java'} #ñ adiciona o java novamente
 print(habilidades)
 #habilidades[0] - ñ funciona 
 
-# 6. dict(dicionário)
+# 6. dict(dicionário) - conjunto de chave-valor
+# pode misturar diferentes tipos 
 # palavra -> definição 
 #conjunto de chave e valor
 # chave -> valor
