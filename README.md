@@ -5,3 +5,5 @@ Este repositório tem como objetivo armazenar e controlar os códigos da discipl
 - Aula 01 - Introdução ao Python
 - Aula 02 - Estuturas de Controle
 - Aula 03 - Estruturas de Repetição
+
+  (https://wiki.python.org.br/ListaDeExercicios)
