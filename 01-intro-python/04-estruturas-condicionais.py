@@ -70,3 +70,43 @@ if dia in dias:
     print(dias[dia])
 
 #ñ tem switch case - match (mais poderoso)
+
+# operador ternário: 
+idade = 20 
+#status  #conteudo de status depender da idade 
+status = 'Maior de idade' if idade>=18 else 'Menor de idade'
+'''
+resume tal codigo: 
+if idade>=18:
+    status = 'maior de idade'
+else
+    status = 'menor de idade'
+'''
+
+
+# match case - para substituir o uso de elif, e pode ser entendido como o switch case, porém + poderoso que ele
+dia = 3
+match dia:
+    case 1: 
+        print('Domingo')
+    case 2: 
+       print('Segunda')
+    case 3: 
+        print('Terça')
+    case _: 
+        print('Inválido') 
+#case _ -> default 
+
+#imprimir: 
+# 1 e 7 - fim de semana
+# 2, 3, 4, 5, 6 - dia útil
+# avaliar várias coisas, agrupando cases
+# | -> não é um or (mas parece) só ñ retorna um booleano
+
+match dia:
+    case 1 | 7:
+        print('fim de semana')
+    case 2 | 3 | 4 | 5 | 6: 
+        print('dia útil')
+    case _: 
+        print('dia inválido')
