@@ -113,3 +113,6 @@ def calcularMedia(*notas):
     return sum(notas)/len(notas)
 # * pode passar qualquer numero de valores - qtd de argumentos que vc quiser e o python transforma em uma tupla
 print(calcularMedia(10.0, 4.0, 8.0))#vai entender que são tres valores 
+
+
+#def cpmtar_vogais_conso(): -> retorna um dicionário 
