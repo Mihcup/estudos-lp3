@@ -12,10 +12,9 @@ def verificarLetra(palavra, palavraForca):
             palavraForca = palavraForca[:posicao] + letra + palavraForca[posicao + 1:]
             encontrouLetra=True
     if not encontrouLetra:
-        print('Essa letra não está na palavra. Cuidado!')
+        print('Essa letra não está na palavra.')
         erro = 1
     forcaPalavra = palavraForca.replace(' ','')
-    print(forcaPalavra)
     if forcaPalavra==palavra:
         print('Parabéns você ganhou')
         ganhou=True
@@ -25,15 +24,18 @@ def verificarLetra(palavra, palavraForca):
 def verificarPalavra(palavra): 
     palavraInserida = input('Insira a seu chute: ')
     palavraInserida = palavraInserida.lower()
+    erro=0
     if palavraInserida==palavra: 
         print('Você acertou :)')
-        return True 
+        return True, erro
     else: 
-        print('Palavra errada! :( Continue tentando')
-        return False 
+        print('Palavra errada! :(')
+        erro+=1
+        return False,erro
 #Função que realiza as principais manipulações da forca 
 def forca(palavra):
     print('Vamos jogar forca!')
+    print('Você pode cometer apenas 5 erros, tome cuidado!')
     tamanho = len(palavra)
     print(f'A palavra oculta possui {tamanho} letras')
     palavraForca = '_ ' * tamanho
@@ -49,7 +51,8 @@ def forca(palavra):
         if cont>3: 
             escolha = int(input('A partir dessa rodada você pode tentar chutar uma palavra - \nDigite 1 para chutar uma palavra e 2 para chutar uma letra\n'))
             if escolha==1: 
-                ganhou = verificarPalavra(palavra)
+                ganhou,erro = verificarPalavra(palavra)
+                qtdErros+=erro
             elif escolha==2: 
                 letra = ''
                 palavraForca,letra,ganhou,erro = verificarLetra(palavra,palavraForca)
@@ -63,6 +66,8 @@ def forca(palavra):
         
         print(palavraForca)   
         cont+=1
+
+print('FIM DE JOGO')
 
 palavraOculta = 'bicicleta'
 forca(palavraOculta)

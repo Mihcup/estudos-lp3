@@ -1,6 +1,5 @@
 import random 
 valorAleatorio = random.randrange(1,101)
-print(valorAleatorio)
 entradaInicial = int(input('Qual é o seu palpite? '))
 
 def jogoDeAdivinhacao (entrada,aleatorio): 
