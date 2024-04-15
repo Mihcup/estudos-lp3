@@ -1,22 +1,68 @@
-palavraOculta = 'bicicleta'
 #pode cometer no máximo 6 erros 
+#Função que verifica se a letra está na palavra e a insere 
+def verificarLetra(palavra, palavraForca):
+    letra = input('Chute uma letra: ') 
+    tamanho = len(palavra)
+    encontrouLetra = False
+    ganhou = False
+    erro = 0
+    for i in range(0,tamanho): 
+        if palavra[i]==letra: 
+            posicao = i*2
+            palavraForca = palavraForca[:posicao] + letra + palavraForca[posicao + 1:]
+            encontrouLetra=True
+    if not encontrouLetra:
+        print('Essa letra não está na palavra. Cuidado!')
+        erro = 1
+    forcaPalavra = palavraForca.replace(' ','')
+    print(forcaPalavra)
+    if forcaPalavra==palavra:
+        print('Parabéns você ganhou')
+        ganhou=True
+    return palavraForca, letra, ganhou, erro
 
+#Função que verifica o chute do usuário 
+def verificarPalavra(palavra): 
+    palavraInserida = input('Insira a seu chute: ')
+    palavraInserida = palavraInserida.lower()
+    if palavraInserida==palavra: 
+        print('Você acertou :)')
+        return True 
+    else: 
+        print('Palavra errada! :( Continue tentando')
+        return False 
+#Função que realiza as principais manipulações da forca 
 def forca(palavra):
     print('Vamos jogar forca!')
     tamanho = len(palavra)
     print(f'A palavra oculta possui {tamanho} letras')
     palavraForca = '_ ' * tamanho
-    print(palavraForca)
+    print(palavraForca,'\n')
     qtdErros = 0
-    while qtdErros<6: 
-        letra = input('Chute uma letra: ') 
-        for i in range(0,tamanho): 
-            if palavra[i]==letra: 
-                posicao = i*2
-                palavraForca = palavraForca[:posicao] + letra + palavraForca[posicao + 1:]
-            else: 
-                qtdErros+=1
-                print(f'Você errou, pode errar apenas mais {6-qtdErros} vezes')  
-            print(palavraForca)   
-           
+    cont = 0
+    letrasInseridas=''
+    ganhou = False
+    while qtdErros<5 and not ganhou: 
+        if cont>0:
+            print(f'Você ja chutou as seguintes letras: {letrasInseridas}')
+        
+        if cont>3: 
+            escolha = int(input('A partir dessa rodada você pode tentar chutar uma palavra - \nDigite 1 para chutar uma palavra e 2 para chutar uma letra\n'))
+            if escolha==1: 
+                ganhou = verificarPalavra(palavra)
+            elif escolha==2: 
+                letra = ''
+                palavraForca,letra,ganhou,erro = verificarLetra(palavra,palavraForca)
+                letrasInseridas+=letra+' '
+                qtdErros+=erro
+        else: 
+            letra = ''
+            palavraForca,letra,ganhou,erro = verificarLetra(palavra,palavraForca)
+            letrasInseridas+=letra+' '
+            qtdErros+=erro
+        
+        print(palavraForca)   
+        cont+=1
+
+palavraOculta = 'bicicleta'
 forca(palavraOculta)
