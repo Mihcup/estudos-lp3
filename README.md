@@ -4,5 +4,7 @@ Este repositório tem como objetivo armazenar e controlar os códigos da discipl
 - Aula 00 - Git e Git Hub
 - Aula 01 - Introdução ao Python
 - Aula 02 - Estuturas de Controle
-- Aula 03 - Estruturas de Repetição
-- Aula 04 - Funções
+- Aula 03 - Operadores
+- Aula 04 - Estruturas COndicionais
+- Aula 05 - Estruturas de Repetição 
+- Aula 06 - Funções 
