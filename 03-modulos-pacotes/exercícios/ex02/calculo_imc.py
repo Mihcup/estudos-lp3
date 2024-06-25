@@ -10,6 +10,7 @@ faixas ={
 
 def calcular_imc(peso,altura):
     imc = round((peso/pow(altura,2)),1)
+    #coloquei uma casa decimal, pois a classificação indicada possui apenas uma casa decimal 
     for classificacao, (min,max) in faixas.items():
         if imc>=min and imc<=max:
             classificacao_pessoa = classificacao
@@ -19,7 +20,7 @@ def calcular_imc(peso,altura):
 
 def perda_ou_ganho(classificacao, peso, altura): 
     if classificacao == "Peso normal": 
-        status="Seu IMC está ideal, não precisa perder ou ganhar peso"
+        status="Como seu IMC está ideal, não há necessidade de perder ou ganhar peso, mas cuide sempre de sua saúde"
     elif classificacao == "Baixo peso":
         min = round(((pow(altura,2)*18.5) - peso),2)
         max = round(((pow(altura,2)*24.9) - peso),2)

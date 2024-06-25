@@ -10,5 +10,5 @@ altura= float(input("Qual a sua altura? "))
 
 imc, classificacao,frase = calcular_imc(peso,altura)
 
-print(f'O VALOR DO IMC É {imc}, assim sua classificação é {classificacao}')
+print(f'O valor do IMC é {imc}, assim sua classificação é {classificacao}')
 print(frase)

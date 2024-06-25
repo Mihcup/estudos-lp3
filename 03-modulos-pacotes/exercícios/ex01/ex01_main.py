@@ -15,9 +15,13 @@ from calculos01 import *
 comprimento = float(input("Comprimento do Aquário: "))
 altura = float(input("Altura do Aquário: "))
 largura = float(input("Comprimento do Aquário: "))
+temperatura_ambiente = float(input("Qual é a temperatura ambiente? "))
+temperatura_desejada = float(input("Qual é a temperatura desejada para o aquário? "))
 
 volume = calcularVolume(comprimento,altura,largura) 
-potencia = calcularPotencia(volume)
+potencia = calcularPotencia(volume, temperatura_ambiente, temperatura_desejada)
 filtragem = calcularFiltragem(volume)
 
-print(volume,potencia,filtragem)
+print(f"O volume do aquário é {volume} L")
+print(f"A potência do termostato deve ser de {potencia} watt")
+print(f"A filtragem deve variar de {filtragem[0]} L/h a {filtragem[1]} L/h")
